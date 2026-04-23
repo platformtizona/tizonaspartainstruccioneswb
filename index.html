@@ -41,32 +41,32 @@
       width: 100%;
     }
 
-    /* HEADER CON LOGOS - MEJORADO */
+    /* HEADER CON LOGOS - NUEVO FONDO DEGRADADO */
     .header {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       padding: 15px 20px;
-      background: rgba(0,0,0,0.7);  /* Más claro que antes */
-      backdrop-filter: blur(15px);    /* Más difuminado */
+      background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(30,10,10,0.9));
+      backdrop-filter: blur(15px);
       z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 15px;
-      border-bottom: 1px solid rgba(255,255,255,0.1); /* Línea sutil */
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
     /* LOGOS MÁS GRANDES */
     .logo-tizona {
-      height: 80px;     /* Antes: 50px */
+      height: 100px;     /* Antes: 80px */
       width: auto;
     }
 
     .logo-sparta {
-      height: 80px;     /* Antes: 50px */
+      height: 100px;     /* Antes: 80px */
       width: auto;
       border-radius: 50%;
     }
@@ -80,7 +80,7 @@
       background-color: #1a1a1a;
       display: flex;
       align-items: flex-end;
-      padding: 140px 20px 48px 20px;  /* Más padding superior por logos más grandes */
+      padding: 160px 20px 48px 20px;  /* Más padding por logos más grandes */
     }
 
     .hero-content h1 {
@@ -98,7 +98,7 @@
       font-weight: 600;
     }
 
-    /* STATS SECTION */
+    /* STATS SECTION - IMÁGENES MÁS GRANDES */
     .stats {
       padding: 80px 20px;
       background: radial-gradient(circle at bottom, #1a0000, #000);
@@ -108,15 +108,16 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 40px;
-      max-width: 1000px;
+      align-items: center;
+      gap: 60px;
+      max-width: 1200px;
       margin: 0 auto;
     }
 
     .stat-card {
       text-align: center;
       flex: 1;
-      min-width: 120px;
+      min-width: 200px;
     }
 
     .stat-number {
@@ -127,15 +128,21 @@
     }
 
     .stat-number img {
-      width: 80px;
+      width: 120px;      /* Antes: 80px */
       height: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .stat-number img:hover {
+      transform: scale(1.05);
     }
 
     .stat-label {
-      font-size: 0.9rem;
+      font-size: 1rem;
       color: var(--muted);
-      margin-top: 10px;
+      margin-top: 20px;
       letter-spacing: 1px;
+      font-weight: 600;
     }
 
     /* INTRO */
@@ -157,7 +164,7 @@
       line-height: 1.6;
     }
 
-    /* STEPS - CON TEXTO ACTUALIZADO */
+    /* STEPS */
     .steps {
       padding: 80px 20px;
       max-width: 700px;
@@ -230,6 +237,9 @@
       border-top: 1px solid #1a1a1a;
     }
 
+    /* ============================================ */
+    /* TABLET Y ESCRITORIO (767px en adelante)      */
+    /* ============================================ */
     @media (min-width: 768px) {
       .hero-content h1 { 
         font-size: 4rem; 
@@ -237,32 +247,72 @@
       .intro h2 { 
         font-size: 3rem; 
       }
-      .stat-number {
-        font-size: 6rem;
-      }
       
-      /* LOGOS AÚN MÁS GRANDES EN ESCRITORIO */
+      /* LOGOS AÚN MÁS GRANDES EN TABLET/ESCRITORIO */
       .logo-tizona {
-        height: 100px;
+        height: 130px;
       }
       .logo-sparta {
-        height: 100px;
+        height: 130px;
+      }
+      
+      /* IMÁGENES 15 y 5 x3 MÁS GRANDES (240px = 80px x 3) */
+      .stat-number img {
+        width: 240px;    /* 80px x 3 = 240px en tablet/ordenador */
+      }
+      
+      .stats-container {
+        gap: 80px;
+      }
+      
+      .stat-label {
+        font-size: 1.3rem;
+        margin-top: 25px;
       }
     }
 
-    /* PARA PANTALLAS MUY PEQUEÑAS (menos de 480px) */
-    @media (max-width: 480px) {
+    /* ============================================ */
+    /* PANTALLAS GRANDES (1200px en adelante)       */
+    /* ============================================ */
+    @media (min-width: 1200px) {
+      .stat-number img {
+        width: 280px;    /* Aún más grandes en pantallas grandes */
+      }
+      
       .logo-tizona {
-        height: 55px;
+        height: 150px;
       }
       .logo-sparta {
-        height: 55px;
+        height: 150px;
+      }
+      
+      .stats-container {
+        gap: 100px;
+      }
+    }
+
+    /* MÓVIL PEQUEÑO (menos de 480px) */
+    @media (max-width: 480px) {
+      .logo-tizona {
+        height: 60px;
+      }
+      .logo-sparta {
+        height: 60px;
       }
       .header {
-        padding: 12px 15px;
+        padding: 10px 15px;
       }
       .hero {
-        padding-top: 100px;
+        padding-top: 110px;
+      }
+      .stat-number img {
+        width: 80px;     /* En móvil se mantienen proporcionadas */
+      }
+      .stat-label {
+        font-size: 0.8rem;
+      }
+      .stats-container {
+        gap: 30px;
       }
     }
   </style>
@@ -283,7 +333,7 @@
     </div>
   </section>
 
-  <!-- STATS SECTION - TEXTO ACTUALIZADO -->
+  <!-- STATS SECTION -->
   <section class="stats">
     <div class="stats-container">
       <div class="stat-card">
@@ -301,7 +351,7 @@
     </div>
   </section>
 
-  <!-- INTRO SECTION - TEXTO ACTUALIZADO -->
+  <!-- INTRO SECTION -->
   <section class="intro">
     <h2>Exclusivity Redefined</h2>
     <p>
@@ -311,7 +361,7 @@
     </p>
   </section>
 
-  <!-- STEPS SECTION - TEXTO ACTUALIZADO -->
+  <!-- STEPS SECTION -->
   <section class="steps">
     <div class="step">
       <h3>1 · Descarga la App</h3>
