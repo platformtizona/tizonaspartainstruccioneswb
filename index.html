@@ -54,18 +54,19 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 15px;
-      background: rgba(200, 200, 200, 0.15);  /* Gris muy clarito y transparente */
+      background: rgba(200, 200, 200, 0.15);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid rgba(255,255,255,0.05);
     }
 
-    /* LOGOS GRANDES */
+    /* LOGO TIZONA x3 MÁS GRANDE */
     .logo-tizona {
-      height: 100px;
+      height: 300px;     /* 100px x 3 = 300px */
       width: auto;
       filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
     }
 
+    /* LOGO SPARTA se mantiene igual */
     .logo-sparta {
       height: 100px;
       width: auto;
@@ -200,9 +201,11 @@
         font-size: 3rem; 
       }
       
+      /* LOGO TIZONA en tablet */
       .logo-tizona {
-        height: 130px;
+        height: 390px;     /* 130px x 3 = 390px */
       }
+      /* LOGO SPARTA en tablet */
       .logo-sparta {
         height: 130px;
       }
@@ -210,9 +213,11 @@
 
     /* PANTALLAS GRANDES */
     @media (min-width: 1200px) {
+      /* LOGO TIZONA en escritorio */
       .logo-tizona {
-        height: 150px;
+        height: 450px;     /* 150px x 3 = 450px */
       }
+      /* LOGO SPARTA en escritorio */
       .logo-sparta {
         height: 150px;
       }
@@ -220,9 +225,11 @@
 
     /* MÓVIL */
     @media (max-width: 480px) {
+      /* LOGO TIZONA en móvil */
       .logo-tizona {
-        height: 60px;
+        height: 180px;     /* 60px x 3 = 180px */
       }
+      /* LOGO SPARTA en móvil */
       .logo-sparta {
         height: 60px;
       }
