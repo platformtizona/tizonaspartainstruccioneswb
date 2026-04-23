@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tizona Fight Club - Private Members Club. Descarga la app, registra tu tarjeta y reserva tus clases exclusivas.">
+  <meta name="keywords" content="Tizona, Fight Club, WodBuster, entrenamiento, MMA, Castelldefels, Sparta">
+  <meta name="author" content="Tizona Fight Club">
+  <title>Tizona Fight Club · Private Members Club</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --red: #c4161c;
+      --black: #0a0a0a;
+      --white: #ffffff;
+      --muted: #b5b5b5;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--black);
+      color: var(--white);
+    }
+
+    h1, h2, h3 {
+      font-family: 'Anton', sans-serif;
+      letter-spacing: 1px;
+      font-weight: normal;
+    }
+
+    section {
+      width: 100%;
+    }
+
+    /* HEADER CON LOGOS */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 20px;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo-tizona {
+      height: 50px;
+      width: auto;
+    }
+
+    .logo-sparta {
+      height: 50px;
+      width: auto;
+      border-radius: 50%;
+    }
+
+    /* HERO con imagen 20 */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.95)), 
+                  url("assets/img/20.png") center/cover no-repeat;
+      background-color: #1a1a1a;
+      display: flex;
+      align-items: flex-end;
+      padding: 120px 20px 48px 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 2.6rem;
+      line-height: 1;
+      margin: 0;
+    }
+
+    .hero-content span {
+      display: block;
+      color: var(--red);
+      font-size: 0.95rem;
+      margin: 12px 0;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+
+    /* STATS SECTION */
+    .stats {
+      padding: 80px 20px;
+      background: radial-gradient(circle at bottom, #1a0000, #000);
+    }
+
+    .stats-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .stat-card {
+      text-align: center;
+      flex: 1;
+      min-width: 120px;
+    }
+
+    .stat-number {
+      font-size: 5rem;
+      font-family: 'Anton', sans-serif;
+      color: var(--red);
+      line-height: 1;
+    }
+
+    .stat-number img {
+      width: 80px;
+      height: auto;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 10px;
+      letter-spacing: 1px;
+    }
+
+    /* INTRO */
+    .intro {
+      padding: 80px 20px;
+      text-align: center;
+      background: #000;
+    }
+
+    .intro h2 {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+    }
+
+    .intro p {
+      max-width: 500px;
+      margin: auto;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* STEPS */
+    .steps {
+      padding: 80px 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .step {
+      margin-bottom: 48px;
+      text-align: center;
+    }
+
+    .step h3 {
+      color: var(--red);
+      margin-bottom: 8px;
+      font-size: 1.3rem;
+    }
+
+    .step p {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* BUTTONS */
+    .cta {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      max-width: 420px;
+      margin: 16px auto;
+      padding: 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+      text-align: center;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .btn-primary {
+      background: var(--red);
+      color: var(--white);
+    }
+
+    .btn-secondary {
+      border: 1px solid #333;
+      color: var(--white);
+      background: transparent;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(196, 22, 28, 0.1);
+      border-color: var(--red);
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #777;
+      border-top: 1px solid #1a1a1a;
+    }
+
+    @media (min-width: 768px) {
+      .hero-content h1 { 
+        font-size: 4rem; 
+      }
+      .intro h2 { 
+        font-size: 3rem; 
+      }
+      .stat-number {
+        font-size: 6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER CON LOGOS -->
+  <header class="header">
+    <img src="assets/img/tizona-logo.png" alt="Tizona Fight Club Logo" class="logo-tizona">
+    <img src="assets/img/sparta-logo.png" alt="Sparta Logo" class="logo-sparta">
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" aria-label="Tizona Fight Club 20 años">
+    <div class="hero-content">
+      <span>SPARTA & TIZONA</span>
+      <h1>Private Members Club</h1>
+    </div>
+  </section>
+
+  <!-- STATS SECTION -->
+  <section class="stats">
+    <div class="stats-container">
+      <div class="stat-card">
+        <div class="stat-number">
+          <img src="assets/img/15.png" alt="15">
+        </div>
+        <div class="stat-label">ENTRENADORES ÉLITE</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">
+          <img src="assets/img/5.png" alt="5">
+        </div>
+        <div class="stat-label">CAMPOS DE ENTRENAMIENTO</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO SECTION -->
+  <section class="intro">
+    <h2>Exclusivity Redefined</h2>
+    <p>
+      Para seguir disfrutando de la experiencia Tizona,
+      es obligatorio tener la app activa, la tarjeta registrada
+      y las reservas al día.
+    </p>
+  </section>
+
+  <!-- STEPS SECTION -->
+  <section class="steps">
+    <div class="step">
+      <h3>1 · Descarga la App</h3>
+      <p>Instala WodBuster en tu móvil desde la tienda oficial.</p>
+    </div>
+
+    <div class="step">
+      <h3>2 · Registra tu tarjeta</h3>
+      <p>Accede a tu perfil y añade una tarjeta bancaria válida.</p>
+    </div>
+
+    <div class="step">
+      <h3>3 · Reserva tus clases</h3>
+      <p>Gestiona tus entrenamientos directamente desde la app.</p>
+    </div>
+  </section>
+
+  <!-- CALL TO ACTION -->
+  <section class="cta">
+    <a class="btn btn-primary" href="https://apps.apple.com/es/app/wodbuster/id1195360759" target="_blank" rel="noopener noreferrer">
+      📱 Descargar para iPhone
+    </a>
+    <a class="btn btn-secondary" href="https://play.google.com/store/apps/details?id=santi.wodbuster" target="_blank" rel="noopener noreferrer">
+      🤖 Descargar para Android
+    </a>
+  </section>
+
+  <footer>
+    <p>© Tizona Fight Club · Castelldefels · Todos los derechos reservados</p>
+  </footer>
+
+</body>
+</html>
