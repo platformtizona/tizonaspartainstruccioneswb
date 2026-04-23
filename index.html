@@ -41,30 +41,32 @@
       width: 100%;
     }
 
-    /* HEADER CON LOGOS */
+    /* HEADER CON LOGOS - MEJORADO */
     .header {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
-      padding: 20px;
-      background: rgba(0,0,0,0.85);
-      backdrop-filter: blur(10px);
+      padding: 15px 20px;
+      background: rgba(0,0,0,0.7);  /* Más claro que antes */
+      backdrop-filter: blur(15px);    /* Más difuminado */
       z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 15px;
+      border-bottom: 1px solid rgba(255,255,255,0.1); /* Línea sutil */
     }
 
+    /* LOGOS MÁS GRANDES */
     .logo-tizona {
-      height: 50px;
+      height: 80px;     /* Antes: 50px */
       width: auto;
     }
 
     .logo-sparta {
-      height: 50px;
+      height: 80px;     /* Antes: 50px */
       width: auto;
       border-radius: 50%;
     }
@@ -78,7 +80,7 @@
       background-color: #1a1a1a;
       display: flex;
       align-items: flex-end;
-      padding: 120px 20px 48px 20px;
+      padding: 140px 20px 48px 20px;  /* Más padding superior por logos más grandes */
     }
 
     .hero-content h1 {
@@ -155,7 +157,7 @@
       line-height: 1.6;
     }
 
-    /* STEPS */
+    /* STEPS - CON TEXTO ACTUALIZADO */
     .steps {
       padding: 80px 20px;
       max-width: 700px;
@@ -238,6 +240,30 @@
       .stat-number {
         font-size: 6rem;
       }
+      
+      /* LOGOS AÚN MÁS GRANDES EN ESCRITORIO */
+      .logo-tizona {
+        height: 100px;
+      }
+      .logo-sparta {
+        height: 100px;
+      }
+    }
+
+    /* PARA PANTALLAS MUY PEQUEÑAS (menos de 480px) */
+    @media (max-width: 480px) {
+      .logo-tizona {
+        height: 55px;
+      }
+      .logo-sparta {
+        height: 55px;
+      }
+      .header {
+        padding: 12px 15px;
+      }
+      .hero {
+        padding-top: 100px;
+      }
     }
   </style>
 </head>
@@ -257,7 +283,7 @@
     </div>
   </section>
 
-  <!-- STATS SECTION -->
+  <!-- STATS SECTION - TEXTO ACTUALIZADO -->
   <section class="stats">
     <div class="stats-container">
       <div class="stat-card">
@@ -275,7 +301,7 @@
     </div>
   </section>
 
-  <!-- INTRO SECTION -->
+  <!-- INTRO SECTION - TEXTO ACTUALIZADO -->
   <section class="intro">
     <h2>Exclusivity Redefined</h2>
     <p>
@@ -285,7 +311,7 @@
     </p>
   </section>
 
-  <!-- STEPS SECTION -->
+  <!-- STEPS SECTION - TEXTO ACTUALIZADO -->
   <section class="steps">
     <div class="step">
       <h3>1 · Descarga la App</h3>
